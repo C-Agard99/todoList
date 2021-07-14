@@ -1,0 +1,19 @@
+body.main {
+    position:fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    font-family: sans-serif;
+    background-color: rgb(121,84,176);
+}
+
+.checkboxGroup{
+    display: flex;
+    flex-direction: row;
+}
+
+#group-size{
+    width: 75%
+}
