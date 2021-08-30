@@ -2,67 +2,16 @@
   <title>toDoList</title>
 </head>
 
-<body class="main">
-<div class="container">
-    {{> loginButtons}}
-    {{> tasks}}
-</div>
-  
- 
+<body>
+    <div class="container">
+        {{> signInForm}}
+        {{> addTasks}}
+        {{#if currentUser}}
+            
+        {{/if}}
+    </div>   
 </body>
 
-<template name="tasks">
-    <div class="row justify-content-around mb-3">
-        <div class="col-lg-6 text center">
-            <h1 class="text-center">To-Do List</h1>
-            <h4 class="text-center">Here you will find all of your tasks for the week.</h4>
-        </div>
-
-        <div id="group-size" class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="checkboxGroup">
-                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small class="text-muted">3 days ago</small>
-                    </div>
-                </div>
-                
-                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                <small class="text-muted">And some small print.</small>
-            </a>
-
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="checkboxGroup">
-                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small class="text-muted">3 days ago</small>
-                    </div>
-                </div>
-                
-                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                <small class="text-muted">And some small print.</small>
-            </a>
-
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="checkboxGroup">
-                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small class="text-muted">3 days ago</small>
-                    </div>
-                </div>
-                
-                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                <small class="text-muted">And some small print.</small>
-            </a>
-            
-          </div>
-        
-    </div>
-    
+<template name="app_layout">
+    {{> Template.dynmaic template=nav}}
 </template>
-
-
-
