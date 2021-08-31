@@ -1,16 +1,16 @@
 Template.addTasks.events({
     'click .js-save'(event){
         //grabs data from the html page
-        let pubTask = $('#task').val();
+        let pubTask = $('#taskType').val();
         let pubDate = $('#taskDate').val();
 
         //reset each input box
         let formGood = true;
-        $("#task").removeClass("invalidWarn");
+        $("#taskType").removeClass("invalidWarn");
         $("#taskDate").removeClass("invalidWarn");
 
         if (pubTask == ""){
-            $("#task").addClass("invalidWarn");
+            $("#taskType").addClass("invalidWarn");
             formGood = false;
         }
         if (pubDate == ""){
@@ -22,8 +22,16 @@ Template.addTasks.events({
             //save data to the collection 
             tasksdb.insert({
                 "pTask":pubTask,
-                "pDate":pubDate
+                "pDate":pubDate,
+                "pOwn":Meteor.userId(),
+                "pName":Meteor.user().username
             });
+
+            //clear input boxes
+            $('#taskType').val("");
+            $('#taskDate').val("");
+            $('#addModal').modal('hide');
         }
     }
+        
 });
