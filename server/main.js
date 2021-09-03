@@ -6,6 +6,6 @@ Meteor.startup(() => {
 });
 
 Meteor.publish('taskData', function(){
-    return profilesdb.find({}, {
+    return tasksdb.find({}, {
     });
 });

@@ -18,7 +18,7 @@ Template.addTasks.events({
             formGood = false;
         }
         if (formGood == true){
-
+            
             //save data to the collection 
             tasksdb.insert({
                 "pTask":pubTask,

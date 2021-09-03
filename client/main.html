@@ -4,15 +4,11 @@
 
 <body>
     <div class="container">
-        {{> signInForm}}
-        {{> addTasks}}
-        {{> ourTasks}}
-        {{#if currentUser}}
-            
-        {{/if}}
+       
     </div>   
 </body>
 
 <template name="app_layout">
     {{> Template.dynmaic template=nav}}
+    {{> Template.dynmaic template=header}}
 </template>
