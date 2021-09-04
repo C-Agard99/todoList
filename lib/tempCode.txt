@@ -22,25 +22,21 @@ normal.route('/', {
         // After route is followed
         BlazeLayout.render('app_layout', {nav: 'nav', header: 'signInForm'});
     },
-    // waitOn(){
-    //     return Meteor.subscribe('noUser');
-    // }
-});
-
-loggedIn.route('/our_tasks', {
-  name: 'tasks',
-  action() {
-        // Do something here
-        // After route is followed
-        BlazeLayout.render('app_layout', {nav: 'nav', main: 'ourTasks'});
-  },
-   waitOn(){
-       return Meteor.subscribe('taskData');
-   }
-});
-
-FlowRouter.route('/add_tasks',{
-    action() {
-        BlazeLayout.render('app_layout', {nav: 'nav', main: 'addTasks'});
+    waitOn(){
+        return Meteor.subscribe('noUser');
     }
 });
+
+// Create profiles route
+loggedIn.route('/profiles', {
+    name:"allProfiles",
+    action() {
+        BlazeLayout.render('app_layout', {nav: 'nav', mainBody:'myAccounts'});
+    },
+    waitOn(params) {
+      return Meteor.subscribe('profData');
+    }
+});
+
+// Create profile route to show an indiviual profile
+loggedIn.route('/profile/:pid', {

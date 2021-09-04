@@ -12,10 +12,10 @@ import './main.html';
 import './navBar.html';
 
 import './signInForm.html';
-// import './signInForm.js';
+import './signInForm.js';
 
 import './addTasks.html';
-// import './addTasks.js';
+import './addTasks.js';
 
 import './publicTasks.html';
-// import './publicTasks.js';
+import './publicTasks.js';

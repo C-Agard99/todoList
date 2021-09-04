@@ -21,9 +21,9 @@ shell-server@0.5.0            # Server-side component of the `meteor shell` comm
 
 
 hot-module-replacement@0.2.0  # Update code in development without reloading the page
-accounts-password
 fortawesome:fontawesome
 session
-useraccounts:bootstrap
 ostrio:flow-router-extra
 kadira:blaze-layout
+accounts-password
+useraccounts:bootstrap
