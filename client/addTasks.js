@@ -30,8 +30,17 @@ Template.addTasks.events({
             //clear input boxes
             $('#taskType').val("");
             $('#taskDate').val("");
-            $('#addModal').modal('hide');
         }
+    },
+    'click .js-delete'(event){
+        let myID = this._id;
+        $('#confirmID').val(myID);
+        $('#confirmModal').modal('show');
+    },
+    'click .js-confirmDel'(event){
+        let delID = $('#confirmID').val();
+        $('#confirmModal').modal('hide');
+            tasksdb.remove({_id: delID});
     }
         
 });

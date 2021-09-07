@@ -11,3 +11,8 @@
 .invalidWarn{
     border: 2px solid #dc3545 !important;
 }
+.js-delete{
+    font-size: 1.5em;
+    color: #dc3545;
+    cursor: pointer;
+}

@@ -19,3 +19,5 @@ import './addTasks.js';
 
 import './publicTasks.html';
 import './publicTasks.js';
+
+import './confirmDel.html';
