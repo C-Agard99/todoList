@@ -3,33 +3,28 @@
         <div class="col-lg-6 text-center">
             <div class="row justify-content-around mb-3">
                 <div class="col-lg-">
-                    <h4 class="text-center">Here you can add new public tasks.</h4>
+                    <h4 class="text-center">Here you can add new tasks.</h4>
                 </div>
             </div>  
             <div class="addData">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="taskLabel">Enter Task</span>
-                    <input type="text" class="form-control" id="taskType" placeholder="Enter Task" aria-label="Enter Task" aria-describedby="taskLabel">
+                    <input type="text" class="form-control" id="taskTitle" placeholder="Enter Task" aria-label="Enter Task" aria-describedby="taskLabel">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="dateLabel">Enter date created</span>
                     <input type="text" class="form-control" id="taskDate" placeholder="9/99/9999" aria-label="Enter Date" aria-describedby="dateLabel">
                 </div>
-                <div class="dropdown mb-3">
-                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Select a task type
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">Public</a></li>
-                      <li><a class="dropdown-item" href="#">Private</a></li>
-                    </ul>
-                </div>
+                <select class="form-select mb-3 mx-auto" id="taskType" aria-label="Default select example">
+                    <option value="public" selected>Public</option>
+                    {{#if currentUser}}
+                        <option value="private">Private</option>
+                    {{/if}}
+                  </select>
                 <div class="footer">
                     <button type="button" class="btn btn-primary js-save">Save</button>
                 </div>
             </div>
         </div>
     </div>
-       
-
 </template>

@@ -1,21 +1,27 @@
 Template.addTasks.events({
     'click .js-save'(event){
         //grabs data from the html page
-        let pubTask = $('#taskType').val();
+        let pubTask = $('#taskTitle').val();
         let pubDate = $('#taskDate').val();
-
+        let pubType = $('#taskType').val();
+        
         //reset each input box
         let formGood = true;
-        $("#taskType").removeClass("invalidWarn");
+        let isTaskPrivate = false;
+
+        $("#taskTitle").removeClass("invalidWarn");
         $("#taskDate").removeClass("invalidWarn");
 
         if (pubTask == ""){
-            $("#taskType").addClass("invalidWarn");
+            $("#taskTitle").addClass("invalidWarn");
             formGood = false;
         }
         if (pubDate == ""){
             $("#taskDate").addClass("invalidWarn");
             formGood = false;
+        }
+        if (pubType == "private"){
+            isTaskPrivate = true;
         }
         if (formGood == true){
             
@@ -24,23 +30,14 @@ Template.addTasks.events({
                 "pTask":pubTask,
                 "pDate":pubDate,
                 "pOwn":Meteor.userId(),
-                "pName":Meteor.user().username
+                "pName":Meteor.user().username,
+                "isPrivate":isTaskPrivate
             });
 
             //clear input boxes
-            $('#taskType').val("");
+            $('#taskTitle').val("");
             $('#taskDate').val("");
         }
-    },
-    'click .js-delete'(event){
-        let myID = this._id;
-        $('#confirmID').val(myID);
-        $('#confirmModal').modal('show');
-    },
-    'click .js-confirmDel'(event){
-        let delID = $('#confirmID').val();
-        $('#confirmModal').modal('hide');
-            tasksdb.remove({_id: delID});
     }
         
 });

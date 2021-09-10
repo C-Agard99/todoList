@@ -3,19 +3,25 @@
         <div class="col-lg">
             <div class="list-group">
                 {{#each theTasks}}
-                    <li class="list-group-item list-group-item-action " aria-current="true">
+                    <li class="list-group-item list-group-item-action" aria-current="true">
                         <div class="d-flex justify-content-between">
                             <h5 class="mb-1">Your tasks</h5>
                             <small>{{pDate}}</small>
                         </div>
                         <p class="mb-1">{{pTask}}</p>
-                        <small>Posted by {{pName}}</small>
-                        <div class="text-end">
-                            <i class="fa fa-trash js-delete"></i>
+                        <div>
+                            {{#if isPrivate}}
+                                <span>Private</span>
+                            {{else}}
+                                <span>Public</span>
+                            {{/if}}
+                            <i class="fa fa-trash js-delete float-end"></i>
                         </div>
+                        <small>Posted by {{pName}}</small>
                     </li>
                 {{/each}}
               </div>
         </div>
     </div>
+    {{> confirmDel}}
 </template>
