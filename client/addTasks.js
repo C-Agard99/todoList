@@ -1,3 +1,4 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 Template.addTasks.events({
     'click .js-save'(event){
         //grabs data from the html page
@@ -37,6 +38,7 @@ Template.addTasks.events({
             //clear input boxes
             $('#taskTitle').val("");
             $('#taskDate').val("");
+            FlowRouter.redirect('our_tasks');
         }
     }
         

@@ -1,6 +1,6 @@
 Template.ourTasks.helpers({
     theTasks(){
-        return tasksdb.find({});
+        return tasksdb.find({ $or: [ { isPrivate: false }, { pOwn: Meteor.userId() } ] });
     }
 });
 
