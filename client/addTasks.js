@@ -32,7 +32,8 @@ Template.addTasks.events({
                 "pDate":pubDate,
                 "pOwn":Meteor.userId(),
                 "pName":Meteor.user().username,
-                "isPrivate":isTaskPrivate
+                "isPrivate":isTaskPrivate,
+                "isComplete": false
             });
 
             //clear input boxes

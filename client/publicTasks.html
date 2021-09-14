@@ -15,9 +15,20 @@
                             {{else}}
                                 <span>Public</span>
                             {{/if}}
-                            <i class="fa fa-trash js-delete float-end"></i>
+                            
+                            {{#if currentUser}}
+                                <i class="fa fa-trash js-delete float-end"></i>
+                                <input class="form-check-input float-end me-1" type="checkbox" value="">
+                            {{/if}}
                         </div>
-                        <small>Posted by {{pName}}</small>
+                        <div>
+                            <small>Posted by {{pName}}</small>
+                            {{#unless currentUser}}
+                                {{#if isComplete}}
+                                    <span> </span>
+                                {{/if}}
+                            {{/unless}}
+                        </div>
                     </li>
                 {{/each}}
               </div>

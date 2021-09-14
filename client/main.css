@@ -16,3 +16,8 @@
     color: #dc3545;
     cursor: pointer;
 }
+.js-complete{
+    font-size: 1.5em;
+    color: #17e628;
+    cursor: pointer;
+}
